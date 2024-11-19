@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positive World News</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div class="flex items-center py-4">
+                        <span class="font-semibold text-gray-500 text-lg">Positive World News</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Science</a>
+                    <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Progress</a>
+                    <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- News Card -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="/api/placeholder/400/200" alt="News Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <span class="text-green-500 text-sm font-semibold">Science</span>
+                    <h2 class="mt-2 text-xl font-semibold text-gray-800">Breakthrough in Renewable Energy Storage</h2>
+                    <p class="mt-2 text-gray-600">Scientists develop new battery technology that could make renewable energy storage 10x more efficient...</p>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-sm text-gray-500">March 15, 2024</span>
+                        <a href="#" class="ml-auto text-green-500 hover:text-green-600">Read more →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more news cards here -->
+        </div>
+    </div>
+
+    <footer class="bg-white mt-12 border-t">
+        <div class="container mx-auto px-4 py-6">
+            <div class="text-center text-gray-500 text-sm">
+                © 2024 Positive World News. Spreading hope through facts.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
