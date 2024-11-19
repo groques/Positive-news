@@ -6,51 +6,161 @@
     <title>Positive World News</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .article-card:hover {
+            transform: translateY(-4px);
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Mobile-friendly navigation -->
     <nav class="bg-white shadow-lg">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between">
-                <div class="flex space-x-7">
+                <div class="flex space-x-4">
                     <div class="flex items-center py-4">
+                        <i class="fas fa-sun text-yellow-500 mr-2"></i>
                         <span class="font-semibold text-gray-500 text-lg">Positive World News</span>
                     </div>
                 </div>
-                <div class="flex items-center space-x-3">
-                    <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Science</a>
-                    <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Progress</a>
-                    <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">About</a>
+                <div class="md:flex items-center space-x-1 hidden">
+                    <a href="#science" class="py-2 px-3 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Science</a>
+                    <a href="#progress" class="py-2 px-3 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Progress</a>
+                    <a href="#environment" class="py-2 px-3 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Environment</a>
+                    <a href="#about" class="py-2 px-3 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">About</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button" onclick="toggleMenu()">
+                        <i class="fas fa-bars text-gray-500"></i>
+                    </button>
                 </div>
             </div>
         </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="#science" class="block py-2 px-4 text-sm hover:bg-green-500 hover:text-white">Science</a>
+            <a href="#progress" class="block py-2 px-4 text-sm hover:bg-green-500 hover:text-white">Progress</a>
+            <a href="#environment" class="block py-2 px-4 text-sm hover:bg-green-500 hover:text-white">Environment</a>
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-green-500 hover:text-white">About</a>
+        </div>
     </nav>
 
+    <!-- Hero Section -->
+    <div class="bg-green-500 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">Discover Hope in Progress</h1>
+            <p class="text-xl">Highlighting the positive changes making our world better</p>
+        </div>
+    </div>
+
+    <!-- Featured Article -->
     <div class="container mx-auto px-4 py-8">
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <!-- News Card -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="/api/placeholder/400/200" alt="News Image" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <span class="text-green-500 text-sm font-semibold">Science</span>
-                    <h2 class="mt-2 text-xl font-semibold text-gray-800">Breakthrough in Renewable Energy Storage</h2>
-                    <p class="mt-2 text-gray-600">Scientists develop new battery technology that could make renewable energy storage 10x more efficient...</p>
-                    <div class="mt-4 flex items-center">
-                        <span class="text-sm text-gray-500">March 15, 2024</span>
-                        <a href="#" class="ml-auto text-green-500 hover:text-green-600">Read more →</a>
-                    </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+            <div class="md:flex">
+                <div class="md:flex-shrink-0">
+                    <img src="/api/placeholder/400/300" alt="Featured" class="h-48 w-full object-cover md:h-full md:w-48">
+                </div>
+                <div class="p-8">
+                    <div class="uppercase tracking-wide text-sm text-green-500 font-semibold">Featured Story</div>
+                    <h2 class="mt-2 text-2xl font-semibold text-gray-800">Major Breakthrough in Clean Energy Storage</h2>
+                    <p class="mt-2 text-gray-600">Revolutionary new technology promises to make renewable energy storage more efficient and accessible...</p>
+                    <a href="#" class="mt-4 inline-block text-green-500 hover:text-green-600">Read more →</a>
                 </div>
             </div>
+        </div>
 
-            <!-- Add more news cards here -->
+        <!-- Category Sections -->
+        <div class="space-y-12">
+            <!-- Science Section -->
+            <section id="science">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">Latest in Science</h2>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Article Card -->
+                    <div class="article-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="/api/placeholder/400/200" alt="Science News" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <span class="text-green-500 text-sm font-semibold">Science</span>
+                            <h3 class="mt-2 text-xl font-semibold text-gray-800">New Cancer Treatment Shows Promise</h3>
+                            <p class="mt-2 text-gray-600">Researchers develop innovative approach to targeting cancer cells...</p>
+                            <div class="mt-4 flex items-center">
+                                <span class="text-sm text-gray-500">March 19, 2024</span>
+                                <a href="#" class="ml-auto text-green-500 hover:text-green-600">Read more →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more article cards here -->
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">Progress Updates</h2>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Article Card -->
+                    <div class="article-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="/api/placeholder/400/200" alt="Progress News" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <span class="text-green-500 text-sm font-semibold">Progress</span>
+                            <h3 class="mt-2 text-xl font-semibold text-gray-800">Global Poverty Rates Continue to Decline</h3>
+                            <p class="mt-2 text-gray-600">New data shows significant progress in reducing extreme poverty...</p>
+                            <div class="mt-4 flex items-center">
+                                <span class="text-sm text-gray-500">March 18, 2024</span>
+                                <a href="#" class="ml-auto text-green-500 hover:text-green-600">Read more →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="bg-green-500 text-white py-12 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-4">Stay Informed</h2>
+            <p class="mb-6">Get weekly updates on positive developments around the world</p>
+            <form class="max-w-md mx-auto">
+                <div class="flex gap-2">
+                    <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-lg text-gray-900">
+                    <button type="submit" class="bg-white text-green-500 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition duration-300">Subscribe</button>
+                </div>
+            </form>
         </div>
     </div>
 
     <footer class="bg-white mt-12 border-t">
-        <div class="container mx-auto px-4 py-6">
-            <div class="text-center text-gray-500 text-sm">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-semibold text-gray-800 mb-3">Categories</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#science">Science</a></li>
+                        <li><a href="#progress">Progress</a></li>
+                        <li><a href="#environment">Environment</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800 mb-3">About</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#about">Our Mission</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 text-sm mt-8">
                 © 2024 Positive World News. Spreading hope through facts.
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
